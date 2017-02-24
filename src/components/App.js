@@ -177,6 +177,7 @@ class App extends Component {
 
     //This will be fired when the server detects a new message from the patient or the bot or the nurse
     socket.on('transmit_message', data => {
+      console.log('TRANSMIT MESSAGE', data);
       /*
       1. Extract the convId from the data.
       2. Check in the state if we already have a conversation with that convId
@@ -187,31 +188,27 @@ class App extends Component {
       5. Update the new component state, and re-render
       */
 
-
-      this.state.conversations.map(ele => {
-        ( if ele.convId === data.convId ){
-          ele.convId = data.convId
-        } else {
-          let theConversation = {
-            convId: data.convId,
-            userId: data.userId,
-            messages: {
-              createdAt: data.convId.createdAt,
-              messageContent: data.convId.messageContent,
-              sender: data.convId.sender
-              state
-            }
-          }
-          [...conversations, theConversation]
-        }
+      let userId = data.userId;
+      let theConversation =  this.state.conversations.find(function(conv){
+          return userId === conv.userId
       })
+      if( !theConversation ){
+        theConversation = {
+          userId: data.userId,
+          messages: [],
+          state: {}
+        }
+        this.state.conversations = [...this.state.conversations, theConversation]
+      }
 
-      getState()
+      theConversation.messages.push(data)
+      this.forceUpdate()
 
     });
 
     // This will be fired when the server detects a change of conversation state
-    socket.on('transmit_state', () => {
+    socket.on('transmit_state', data => {
+      console.log('TRANSMIT STATE', data);
       /*
       1. Extract the convId from the data.
       2. Check in the state if we already have a conversation with that convId
@@ -242,7 +239,7 @@ class App extends Component {
             fontSize:"0.75em",
             textAlign: "center"
           }}
-        >Copyright 4Floor2Kitch 2016 &copy;</p>
+        >Copyright DecodeMtl 2016 &copy;</p>
       </div>
     );
   }

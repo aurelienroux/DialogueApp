@@ -133,10 +133,13 @@ class ChatBox extends Component {
             }}
           >forum</FontIcon>
         </div>
+        
         <div style={chatBoxLimitStyle}>
           {convItem}
         </div>
+
         <Divider />
+
         <TextField
           errorText="This field is required ?? no?"
           floatingLabelText="dynamic ?? must empty after launch"
@@ -144,12 +147,14 @@ class ChatBox extends Component {
           ref="input"
           style={{margin:"5px 0 20px"}}
         />
+
         <RaisedButton
           icon={<FontIcon className="material-icons">done</FontIcon>}
           label="Confirm"
           onClick={this.socketEmit}
           primary={true}
         />
+
       </div>
     )
   }
