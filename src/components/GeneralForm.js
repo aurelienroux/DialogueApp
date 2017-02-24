@@ -79,11 +79,11 @@ class GeneralForm extends Component {
             </div>
           )
         }
-      })
+      })//end of map function and questions render
     }else{
       return (
         <div>
-          button qui envoi le from o a la person
+          button pour envoyer le formulaire
         </div>
       )
     }
