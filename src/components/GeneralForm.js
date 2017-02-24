@@ -2,8 +2,7 @@
 import React, { Component } from 'react'
 
 //WebSocket
-import io from "socket.io-client"
-let socket = io("https://triage-project.herokuapp.com/")
+import socket from '../socket';
 
 //Material UI
 import TextField from 'material-ui/TextField';
@@ -30,7 +29,9 @@ const otherQuestion={
 //Main Component
 class GeneralForm extends Component {
 
-
+  sendQuestions() {
+    socket.emit('send_form', {user_id: this.props.conversation.user_id});
+  }
   render(){
     const that = this
     const questions = this.props.conversation.state.questions;
@@ -83,7 +84,7 @@ class GeneralForm extends Component {
     }else{
       return (
         <div>
-          button pour envoyer le formulaire
+          <button onClick={this.sendQuestions.bind(this)}>click here to send questions</button>
         </div>
       )
     }

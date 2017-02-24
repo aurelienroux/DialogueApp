@@ -55,7 +55,7 @@ class ChatBox extends Component {
   }
   render(){
     const messages = this.props.conversation.messages;
-    const convItem = messages.map(function(message){
+    const convItem = messages.map(function(message, idx){
       if(message.sender === 'app'){
         let messageTime = message.time
         console.log(messageTime)
@@ -63,7 +63,7 @@ class ChatBox extends Component {
           <Paper
             style={appStyle}
             zDepth={1}
-            key={message.user_id}
+            key={idx}
             children={
               <div>
                 <p>{message.message}</p>
@@ -94,7 +94,7 @@ class ChatBox extends Component {
           <Paper
             style={userStyle}
             zDepth={1}
-            key={message.user_id}
+            key={idx}
             children={
               <div>
                 <p>{message.message}</p>
@@ -133,7 +133,7 @@ class ChatBox extends Component {
             }}
           >forum</FontIcon>
         </div>
-        
+
         <div style={chatBoxLimitStyle}>
           {convItem}
         </div>

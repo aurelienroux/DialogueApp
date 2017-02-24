@@ -10,145 +10,43 @@ import HeaderTabs from './HeaderTabs'
 class App extends Component {
   state={
     conversations: [
-      {
-        id: 'first Id',
-        user_id: 'firstuser_Id',
-        state: {},
-        messages: [
-          {
-            user_id: 'patient',
-            message: 'hello, how are you ^',
-            sender: 'user',
-            time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
-          },
-          {
-            user_id: 'nurse',
-            message: 'sending you some questions that are soooooo long that it just doenst make sense!!!',
-            sender: 'app',
-            time: '2017-01-01 15:05:25'
-          },
-          {
-            user_id: 'patienttwo',
-            message: 'i<ll look at that',
-            sender: 'user',
-            time: '2017-01-01 15:05:25'
-          },
-          {
-            user_id: 'patientthree',
-            message: 'hello, how are you ^',
-            sender: 'user',
-            time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
-          },
-          {
-            user_id: 'patientbutapp',
-            message: 'hello, how are you ^',
-            sender: 'app',
-            time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
-          },
-        ]
-      },
-      {
-        id: 'second Id',
-        user_id: 'seconduser_Id',
-        state: {
-          needsHuman: true,
-          questions: [
-            {
-              ask: 'do_you_smoke',
-              accept: ['affirmative'],
-              isAsking: false,
-              answer: 'a lot!!'
-            },
-            {
-              ask: 'do_you_have_allergies',
-              accept: ['affirmative'],
-              isAsking: false,
-              answer: "not that I know of"
-            },
-            {
-              ask: 'do_you_smoke_again',
-              accept: ['affirmative'],
-              isAsking: true
-            }
-          ]
-        },
-        messages: [
-          {
-            user_id: 'patient',
-            message: 'hello second conversation',
-          },
-          {
-            user_id: 'nurse',
-            message: 'i will send you some questions'
-          }
-        ]
-      },
-      {
-        id: 'thirdtId',
-        user_id: 'thirduser_Id',
-        state: {
-          needsHuman: true,
-          questions: [
-            {
-              ask: 'do_you_smoke'
-            }
-          ]
-        },
-        messages: [
-          {
-            user_id: 'patient',
-            message: 'hello',
-          },
-          {
-            user_id: 'nurse',
-            message: 'i will send you some questions'
-          }
-        ]
-      },
-      {
-        id: 'fourthtId',
-        user_id: 'thirduser_Id',
-        state: {
-          needsHuman: true,
-          questions: [
-            {
-              ask: 'do_you_smoke'
-            }
-          ]
-        },
-        messages: [
-          {
-            user_id: 'patient',
-            message: 'hello',
-          },
-          {
-            user_id: 'nurse',
-            message: 'i will send you some questions'
-          }
-        ]
-      },
-      {
-              id: 'fifthtId',
-              user_id: 'thirduser_Id',
-              state: {
-                needsHuman: true,
-                questions: [
-                  {
-                    ask: 'do_you_smoke'
-                  }
-                ]
-              },
-              messages: [
-                {
-                  user_id: 'patient',
-                  message: 'hello',
-                },
-                {
-                  user_id: 'nurse',
-                  message: 'i will send you some questions'
-                }
-              ]
-            }
+      // {
+      //   id: 'first Id',
+      //   user_id: 'firstuser_Id',
+      //   state: {},
+      //   messages: [
+      //     {
+      //       user_id: 'patient',
+      //       message: 'hello, how are you ^',
+      //       sender: 'user',
+      //       time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
+      //     },
+      //     {
+      //       user_id: 'nurse',
+      //       message: 'sending you some questions that are soooooo long that it just doenst make sense!!!',
+      //       sender: 'app',
+      //       time: '2017-01-01 15:05:25'
+      //     },
+      //     {
+      //       user_id: 'patienttwo',
+      //       message: 'i<ll look at that',
+      //       sender: 'user',
+      //       time: '2017-01-01 15:05:25'
+      //     },
+      //     {
+      //       user_id: 'patientthree',
+      //       message: 'hello, how are you ^',
+      //       sender: 'user',
+      //       time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
+      //     },
+      //     {
+      //       user_id: 'patientbutapp',
+      //       message: 'hello, how are you ^',
+      //       sender: 'app',
+      //       time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
+      //     },
+      //   ]
+      // },
 
 
 
@@ -173,6 +71,15 @@ class App extends Component {
          the same logic as the transmit_message event.
       4. Update the new component state and re-render
       */
+      // conversations.map(function(conv){
+      //   this.state.conversations = [...this.state.conversations, conv]
+      // })
+      //
+      // conversations.forEach(function(conv){
+      //   fetch(?)
+      //   .then()
+      // })
+
     });
 
     //This will be fired when the server detects a new message from the patient or the bot or the nurse
@@ -187,23 +94,20 @@ class App extends Component {
       4. "Push" the new message to the messages of theConversation, in the correct sort order
       5. Update the new component state, and re-render
       */
-
-      let userId = data.userId;
+      let userId = data.user_id;
       let theConversation =  this.state.conversations.find(function(conv){
-          return userId === conv.userId
+          return userId === conv.user_id
       })
       if( !theConversation ){
         theConversation = {
-          userId: data.userId,
+          user_id: data.user_id,
           messages: [],
           state: {}
         }
         this.state.conversations = [...this.state.conversations, theConversation]
       }
-
       theConversation.messages.push(data)
       this.forceUpdate()
-
     });
 
     // This will be fired when the server detects a change of conversation state
@@ -218,9 +122,20 @@ class App extends Component {
       4. "Override" the old conversation state with the new conversation state
       5. Update the new component state, and re-render
       */
-
-
-
+      let userId = data.user_id
+      let theConversation = this.state.conversations.find(function(conv){
+        return userId = conv.user_id
+      })
+      if( !theConversation ){
+        theConversation = {
+          user_id: data.user_id,
+          messages: [],
+          state: data.state
+        }
+        this.state.conversations = [...this.state.conversations, theConversation]
+      }
+      theConversation.state = data.state
+      this.forceUpdate();
     });
   }
 
