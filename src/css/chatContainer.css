@@ -1,0 +1,9 @@
+@media screen and (min-width: 600px) {
+  #chatContainer {
+    flex-direction: row !important;
+    padding: 1vw !important;
+  }
+  .chatContainerChild{
+    margin: 1vw !important;
+  }
+}
