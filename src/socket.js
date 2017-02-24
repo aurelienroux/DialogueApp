@@ -1,5 +1,5 @@
 //WebSocket
 import io from "socket.io-client"
-let socket = io("https://1b78034c.ngrok.io/")
+let socket = io("https://a213818b.ngrok.io")
 
 export default socket;

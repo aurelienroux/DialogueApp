@@ -30,7 +30,10 @@ const otherQuestion={
 class GeneralForm extends Component {
 
   sendQuestions() {
-    socket.emit('send_form', {user_id: this.props.conversation.user_id});
+    socket.emit(
+      'send_form',
+      {user_id: this.props.conversation.user_id}
+    );
   }
   render(){
     const that = this

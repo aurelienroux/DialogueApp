@@ -50,8 +50,13 @@ const timestampStyle={
 
 //Main Component
 class ChatBox extends Component {
-  socketEmit = () => {
-    socket.emit('human_message', {message: `${this.refs.input.value}`})
+  socketEmit(){
+    console.log("testing button form")
+    socket.emit(
+      'human_message',
+      {user_id: this.props.conversation.user_id},
+      {message: `${this.refs.input.value}`}
+    );
   }
   render(){
     const messages = this.props.conversation.messages;
@@ -151,7 +156,7 @@ class ChatBox extends Component {
         <RaisedButton
           icon={<FontIcon className="material-icons">done</FontIcon>}
           label="Confirm"
-          onClick={this.socketEmit}
+          onClick={this.socketEmit.bind(this)}
           primary={true}
         />
 

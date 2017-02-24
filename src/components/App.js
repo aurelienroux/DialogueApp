@@ -59,7 +59,6 @@ class App extends Component {
 
 
   componentDidMount(){
-
     fetch('https://triage-project.herokuapp.com/conv')
     .then(res => res.json())
     .then(conversations => {
