@@ -35,6 +35,13 @@ class GeneralForm extends Component {
       {user_id: this.props.conversation.user_id}
     );
   }
+  sendHumanResponse(){
+    socket.emit(
+      'send_human_response',
+      {user_id: this.props.conversation.user_id},
+      {text: }
+    )
+  }
   render(){
     const that = this
     const questions = this.props.conversation.state.questions;
