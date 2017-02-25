@@ -28,13 +28,15 @@ const otherQuestion={
 
 //Main Component
 class GeneralForm extends Component {
-
+  //IS WORKING
   sendQuestions() {
     socket.emit(
       'send_form',
       {user_id: this.props.conversation.user_id}
     );
   }
+
+  //NOT WORKING
   sendHumanResponse(){
     socket.emit(
       'send_human_response',

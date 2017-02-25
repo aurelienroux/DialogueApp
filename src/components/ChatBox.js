@@ -51,13 +51,21 @@ const timestampStyle={
 //Main Component
 class ChatBox extends Component {
   sendChatResponse(){
-    console.log("testing button")
-    socket.emit(
-      'send_human_message',
-      {user_id: this.props.conversation.user_id},
-      {message: `${this.refs.input.value}`}
-    );
-  }
+      let val = this.refs.inputTest.value
+      console.log("testing button")
+      console.log(val)
+      socket.emit(
+        'send_human_message',
+        {
+            user_id: this.props.conversation.user_id,
+            message: val
+        }
+      );
+      this.refs.inputTest.value = "";
+      console.log("send chat function done")
+    }
+
+
   render(){
     const messages = this.props.conversation.messages;
     const convItem = messages.map(function(message, idx){
@@ -153,12 +161,14 @@ class ChatBox extends Component {
           style={{margin:"5px 0 20px"}}
         />
 
+        <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input>
+
         {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
 
         <RaisedButton
           icon={<FontIcon className="material-icons">done</FontIcon>}
           label="Confirm"
-          // onClick={this.sendChatResponse.bind(this)}
+          onClick={this.sendChatResponse.bind(this)}
           primary={true}
         />
 
