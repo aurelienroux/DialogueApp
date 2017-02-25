@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 var moment = require('moment');
 
 //WebSocket
-import io from "socket.io-client"
-let socket = io("https://triage-project.herokuapp.com/")
+import socket from '../socket';
 
 //Material UI
 import RaisedButton from 'material-ui/RaisedButton';
@@ -57,8 +56,8 @@ class ChatBox extends Component {
       socket.emit(
         'send_human_message',
         {
-            user_id: this.props.conversation.user_id,
-            message: val
+          user_id: this.props.conversation.user_id,
+          message: val
         }
       );
       this.refs.inputTest.value = "";
