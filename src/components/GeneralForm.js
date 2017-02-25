@@ -39,7 +39,6 @@ class GeneralForm extends Component {
     socket.emit(
       'send_human_response',
       {user_id: this.props.conversation.user_id},
-      {text: }
     )
   }
   render(){
@@ -73,7 +72,7 @@ class GeneralForm extends Component {
                 fullWidth={true}
                 icon={<FontIcon className="material-icons">done</FontIcon>}
                 label="Confirm"
-                onClick={that.socketEmit}
+                // onClick={this.sockEmit}
                 primary={true}
               />
             </div>
