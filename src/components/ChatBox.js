@@ -54,8 +54,8 @@ class ChatBox extends Component {
     console.log("testing button")
     socket.emit(
       'send_human_message',
-      // {user_id: this.props.conversation.user_id},
-      // {message: `${this.refs.input.value}`}
+      {user_id: this.props.conversation.user_id},
+      {message: `${this.refs.input.value}`}
     );
   }
   render(){
@@ -153,12 +153,12 @@ class ChatBox extends Component {
           style={{margin:"5px 0 20px"}}
         />
 
-        <button onClick={this.sendChatResponse.bind(this)}>click</button>
+        {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
 
         <RaisedButton
           icon={<FontIcon className="material-icons">done</FontIcon>}
           label="Confirm"
-          onClick={this.sendChatResponse.bind(this)}
+          // onClick={this.sendChatResponse.bind(this)}
           primary={true}
         />
 
