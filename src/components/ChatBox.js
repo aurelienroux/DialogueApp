@@ -72,7 +72,6 @@ class ChatBox extends Component {
     const convItem = messages.map(function(message, idx){
       if(message.sender === 'app'){
         let messageTime = message.time
-        console.log(messageTime)
         return (
           <Paper
             style={appStyle}
@@ -103,7 +102,6 @@ class ChatBox extends Component {
         )
       } else {
         let messageTime = message.time
-        console.log(messageTime)
         return (
           <Paper
             style={userStyle}
@@ -157,12 +155,12 @@ class ChatBox extends Component {
         <TextField
           floatingLabelText="Type question here"
           fullWidth={true}
-          ref="input"
+          ref="inputTest"
           style={{margin:"5px 0 20px"}}
         />
 
-        {/* <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input>
-        <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
+        <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input>
+        {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
 
         <RaisedButton
           icon={<FontIcon className="material-icons">done</FontIcon>}

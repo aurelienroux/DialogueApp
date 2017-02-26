@@ -142,6 +142,7 @@ class GeneralForm extends Component {
               label="General Questions"
               primary={true}
               style={btn}
+              disabled={true}
             />
             <RaisedButton
               fullWidth={false}
@@ -149,6 +150,7 @@ class GeneralForm extends Component {
               label="Allergies Questions"
               primary={true}
               style={btn}
+              disabled={true}
             />
 
           </div>
