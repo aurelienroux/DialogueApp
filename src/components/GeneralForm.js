@@ -48,12 +48,11 @@ class GeneralForm extends Component {
       'send_human_response',
       {
         user_id: this.props.conversation.user_id,
-        // user_id: "dummy id",
-        // response:"response here",
+        response: inputField.value,
         // baseType:"baseType here"
       },
     )
-    console.log("human response done")
+    console.log("humanres" + this.refs.inputField.value)
   }
 
   render(){
@@ -92,7 +91,7 @@ class GeneralForm extends Component {
                 primary={true}
               /> */}
               <input type="text" ref="inputField"></input>
-              <button onClick={that.sendHumanResponse} >click</button>
+              <button onClick={that.sendHumanResponse.bind(that)} >click</button>
             </div>
           )
         } else {
@@ -153,7 +152,6 @@ class GeneralForm extends Component {
               style={btn}
               disabled={true}
             />
-
           </div>
         </div>
       )
@@ -169,14 +167,11 @@ class GeneralForm extends Component {
             padding: "1em",
             textAlign: "center",
             textTransform: "uppercase",
-          }}
-          >
+          }}>
             <FontIcon
               className="material-icons"
-              style={{
-                color: "rgba(255,255,255, 0.7)",
-              }}
-            >assignment</FontIcon>
+              style={{color: "rgba(255,255,255, 0.7)"}}>assignment
+            </FontIcon>
         </div>
         <div style={compStyle}>
           <form>
