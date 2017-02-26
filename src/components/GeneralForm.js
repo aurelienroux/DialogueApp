@@ -49,14 +49,12 @@ class GeneralForm extends Component {
       {
         user_id: this.props.conversation.user_id,
         text: this.refs.inputField.value,
-        baseType:"baseType here"
       },
     )
     console.log("human res " + this.refs.inputField.value)
   }
 
   render(){
-    // const that = this
     const questions = this.props.conversation.state.questions;
     let questionsRender;
     if(questions){
