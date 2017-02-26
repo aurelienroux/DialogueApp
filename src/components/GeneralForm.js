@@ -52,11 +52,11 @@ class GeneralForm extends Component {
         baseType:"baseType here"
       },
     )
-    console.log("humanres " + this.refs.inputField.value)
+    console.log("human res " + this.refs.inputField.value)
   }
 
   render(){
-    const that = this
+    // const that = this
     const questions = this.props.conversation.state.questions;
     let questionsRender;
     if(questions){
