@@ -34,7 +34,7 @@ const btn={
 //Main Component
 class GeneralForm extends Component {
   //IS WORKING
-  sendQuestions() {
+  sendQuestions = () => {
     socket.emit(
       'send_form',
       {user_id: this.props.conversation.user_id}
@@ -60,7 +60,7 @@ class GeneralForm extends Component {
     const questions = this.props.conversation.state.questions;
     let questionsRender;
     if(questions){
-      questionsRender = questions.map(function(question){
+      questionsRender = questions.map( question => {
         if(question.isAsking === false){
           return (
             <div key={question.ask} style={otherQuestion} >
@@ -91,7 +91,7 @@ class GeneralForm extends Component {
                 primary={true}
               /> */}
               <input type="text" ref="inputField"></input>
-              <button onClick={that.sendHumanResponse} >click</button>
+              <button onClick={this.sendHumanResponse.bind(this)} >click</button>
             </div>
           )
         } else {
