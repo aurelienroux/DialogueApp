@@ -53,8 +53,6 @@ const timestampStyle={
 class ChatBox extends Component {
   sendChatResponse(){
       let val = this.refs.inputTest.value
-      console.log("testing button")
-      console.log(val)
       socket.emit(
         'send_human_message',
         {
@@ -63,7 +61,6 @@ class ChatBox extends Component {
         }
       );
       this.refs.inputTest.value = "";
-      console.log("send chat function done")
     }
 
 

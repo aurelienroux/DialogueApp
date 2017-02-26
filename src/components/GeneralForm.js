@@ -48,8 +48,8 @@ class GeneralForm extends Component {
       'send_human_response',
       {
         user_id: this.props.conversation.user_id,
-        response: this.refs.inputField.value,
-        // baseType:"baseType here"
+        text: this.refs.inputField.value,
+        baseType:"baseType here"
       },
     )
     console.log("humanres " + this.refs.inputField.value)
