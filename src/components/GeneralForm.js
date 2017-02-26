@@ -48,8 +48,9 @@ class GeneralForm extends Component {
       'send_human_response',
       {
         user_id: this.props.conversation.user_id,
-        response:"response here",
-        baseType:"baseType here"
+        // user_id: "dummy id",
+        // response:"response here",
+        // baseType:"baseType here"
       },
     )
     console.log("human response done")
@@ -77,7 +78,7 @@ class GeneralForm extends Component {
         else if (question.isAsking === true){
           return (
             <div style={currentQuestion} key={question.ask}>
-              <TextField
+              {/* <TextField
                 floatingLabelText={question.ask}
                 fullWidth={true}
                 ref="input"
@@ -89,9 +90,9 @@ class GeneralForm extends Component {
                 label="Confirm"
                 // onClick={this.sendHumanResponse.bind(this)}
                 primary={true}
-              />
-              {/* <input type="text" ref="inputField"></input> */}
-              {/* <button onClick={that.sendHumanResponse} >click</button> */}
+              /> */}
+              <input type="text" ref="inputField"></input>
+              <button onClick={that.sendHumanResponse} >click</button>
             </div>
           )
         } else {
