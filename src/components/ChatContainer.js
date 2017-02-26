@@ -3,17 +3,16 @@ import React, { Component } from 'react'
 import Paper from 'material-ui/Paper';
 
 //CSS
-import '../css/chatContainer.css'
 const style={
   backgroundColor: "lightgrey",
   display: "flex",
-  flexDirection: "column",
-  padding: "2vw"
+  flexDirection: "row",
+  padding: "1vw",
 }
 
 const childStyle={
   flex: "1",
-  margin: "2vw",
+  margin: "1vw",
 }
 
 //Import Components

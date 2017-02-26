@@ -14,13 +14,13 @@ class App extends Component {
           id: 'first Id',
           user_id: 'firstuser_Id',
           state: {
-            questions: [
-              {
-                ask: 'do_you_smoke',
-                accept: ['affirmative'],
-                isAsking: false,
-                answer: 'a lot!!'
-              }],
+            // questions: [
+            //   {
+            //     ask: 'do_you_smoke',
+            //     accept: ['affirmative'],
+            //     isAsking: false,
+            //     answer: 'a lot!!'
+            //   }],
 
           },
           messages: [
@@ -60,26 +60,7 @@ class App extends Component {
           id: 'second Id',
           user_id: 'seconduser_Id',
           state: {
-            needsHuman: true,
-            questions: [
-              {
-                ask: 'do_you_smoke',
-                accept: ['affirmative'],
-                isAsking: false,
-                answer: 'a lot!!'
-              },
-              {
-                ask: 'do_you_have_allergies',
-                accept: ['affirmative'],
-                isAsking: false,
-                answer: "not that I know of"
-              },
-              {
-                ask: 'do_you_smoke_again',
-                accept: ['affirmative'],
-                isAsking: true
-              }
-            ]
+
           },
           messages: [
             {

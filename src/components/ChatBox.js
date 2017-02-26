@@ -21,7 +21,8 @@ const compStyle={
 
 const userStyle={
   backgroundColor: "steelblue",
-  margin: "1em 0",
+  borderRadius: "10px",
+  margin: "1em 0 1em 0.5em",
   padding: "0.5vh 0.5em",
   width: "75%"
 }
@@ -29,7 +30,8 @@ const userStyle={
 const appStyle={
   alignSelf: "flex-end",
   backgroundColor: "grey",
-  margin: "1em 0",
+  borderRadius: "10px",
+  margin: "1em 0.5em 1em 0",
   padding: "0.5vh 0.5em",
   textAlign: "right",
   width: "75%"
@@ -153,16 +155,14 @@ class ChatBox extends Component {
         <Divider />
 
         <TextField
-          errorText="This field is required ?? no?"
-          floatingLabelText="dynamic ?? must empty after launch"
+          floatingLabelText="Type question here"
           fullWidth={true}
           ref="input"
           style={{margin:"5px 0 20px"}}
         />
 
-        <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input>
-
-        {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
+        {/* <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input>
+        <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
 
         <RaisedButton
           icon={<FontIcon className="material-icons">done</FontIcon>}

@@ -26,6 +26,10 @@ const otherQuestion={
   marginBottom: "20px"
 }
 
+const btn={
+  margin: "10px",
+}
+
 //Main Component
 class GeneralForm extends Component {
   //IS WORKING
@@ -104,7 +108,50 @@ class GeneralForm extends Component {
     }else{
       return (
         <div>
-          <button onClick={this.sendQuestions.bind(this)}>click here to send questions</button>
+          <div
+            style={{
+              backgroundColor: "#00bcd4",
+              color: "rgba(255,255,255, 0.7)",
+              fontSize: "14px",
+              padding: "1em",
+              textAlign: "center",
+              textTransform: "uppercase",
+            }}>
+              <FontIcon
+                className="material-icons"
+                style={{
+                  color: "rgba(255,255,255, 0.7)",
+                }}
+                >assignment</FontIcon>
+          </div>
+          <div style={{marginTop:"50px"}}>
+            {/* <button style={btn} onClick={this.sendQuestions.bind(this)}>click here to send questions</button> */}
+            <RaisedButton
+              fullWidth={false}
+              icon={<FontIcon className="material-icons">done</FontIcon>}
+              label="Click here to send questions"
+              onClick={this.sendQuestions.bind(this)}
+              primary={true}
+              style={btn}
+            />
+            <RaisedButton
+              fullWidth={false}
+              icon={<FontIcon className="material-icons">done</FontIcon>}
+              label="General Questions"
+              onClick={this.sendQuestions.bind(this)}
+              primary={true}
+              style={btn}
+            />
+            <RaisedButton
+              fullWidth={false}
+              icon={<FontIcon className="material-icons">done</FontIcon>}
+              label="Allergies Questions"
+              onClick={this.sendQuestions.bind(this)}
+              primary={true}
+              style={btn}
+            />
+
+          </div>
         </div>
       )
     }
@@ -133,7 +180,6 @@ class GeneralForm extends Component {
             {questionsRender}
           </form>
         </div>
-
       </div>
     )
   }
