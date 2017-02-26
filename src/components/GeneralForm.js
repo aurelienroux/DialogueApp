@@ -42,17 +42,17 @@ class GeneralForm extends Component {
   }
 
   //NOT WORKING
-  sendHumanResponse(e){
+  sendHumanResponse = (e) => {
     e.preventDefault()
     socket.emit(
       'send_human_response',
       {
         user_id: this.props.conversation.user_id,
-        response: inputField.value,
+        response: this.refs.inputField.value,
         // baseType:"baseType here"
       },
     )
-    console.log("humanres" + this.refs.inputField.value)
+    console.log("humanres " + this.refs.inputField.value)
   }
 
   render(){
@@ -91,7 +91,7 @@ class GeneralForm extends Component {
                 primary={true}
               /> */}
               <input type="text" ref="inputField"></input>
-              <button onClick={that.sendHumanResponse.bind(that)} >click</button>
+              <button onClick={that.sendHumanResponse} >click</button>
             </div>
           )
         } else {
