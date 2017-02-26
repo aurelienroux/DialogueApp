@@ -29,7 +29,7 @@ const userStyle={
 
 const appStyle={
   alignSelf: "flex-end",
-  backgroundColor: "#BDBDBD",
+  backgroundColor: "#E0E0E0",
   borderRadius: "10px",
   margin: "1em 0.5em 1em 0",
   padding: "0.5vh 0.5em",

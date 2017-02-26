@@ -18,8 +18,9 @@ const compStyle={
 }
 
 const currentQuestion={
-  backgroundColor: "gold",
-  marginBottom: "20px"
+  backgroundColor: "#0097A7",
+  marginBottom: "20px",
+  color: "blue"
 }
 
 const otherQuestion={
@@ -28,7 +29,6 @@ const otherQuestion={
 
 const btn={
   margin: "10px",
-  backgroundColor: "black"
 }
 
 //Main Component
@@ -78,9 +78,10 @@ class GeneralForm extends Component {
           return (
             <div style={currentQuestion} key={question.ask}>
               <TextField
-                fullWidth={true}
-                errorText="This field is required"
                 floatingLabelText={question.ask}
+                fullWidth={true}
+                ref="input"
+                style={{margin:"5px 0 20px"}}
               />
               <RaisedButton
                 fullWidth={true}
@@ -89,8 +90,8 @@ class GeneralForm extends Component {
                 // onClick={this.sendHumanResponse.bind(this)}
                 primary={true}
               />
-              <input type="text" ref="inputField"></input>
-              <button onClick={that.sendHumanResponse} >click</button>
+              {/* <input type="text" ref="inputField"></input> */}
+              {/* <button onClick={that.sendHumanResponse} >click</button> */}
             </div>
           )
         } else {
