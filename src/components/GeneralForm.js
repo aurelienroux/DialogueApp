@@ -37,12 +37,19 @@ class GeneralForm extends Component {
   }
 
   //NOT WORKING
-  sendHumanResponse(){
+  sendHumanResponse(e){
+    e.preventDefault()
     socket.emit(
       'send_human_response',
-      {user_id: this.props.conversation.user_id},
+      {
+        user_id: this.props.conversation.user_id,
+        response:"response here",
+        baseType:"baseType here"
+      },
     )
+    console.log("human response done")
   }
+
   render(){
     const that = this
     const questions = this.props.conversation.state.questions;
@@ -74,9 +81,11 @@ class GeneralForm extends Component {
                 fullWidth={true}
                 icon={<FontIcon className="material-icons">done</FontIcon>}
                 label="Confirm"
-                // onClick={this.sockEmit}
+                // onClick={this.sendHumanResponse.bind(this)}
                 primary={true}
               />
+              <input type="text" ref="inputField"></input>
+              <button onClick={that.sendHumanResponse} >click</button>
             </div>
           )
         } else {
