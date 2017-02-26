@@ -14,13 +14,13 @@ class App extends Component {
           id: 'first Id',
           user_id: 'firstuser_Id',
           state: {
-            // questions: [
-            //   {
-            //     ask: 'do_you_smoke',
-            //     accept: ['affirmative'],
-            //     isAsking: false,
-            //     answer: 'a lot!!'
-            //   }],
+            questions: [
+              {
+                ask: 'do_you_smoke',
+                accept: ['affirmative'],
+                isAsking: false,
+                answer: 'a lot!!'
+              }],
 
           },
           messages: [

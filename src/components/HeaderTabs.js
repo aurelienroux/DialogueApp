@@ -15,15 +15,17 @@ import ChatContainer from './ChatContainer'
 class headerTabs extends Component {
   render(){
     return(
-      <div>
+      <div >
         <h1
           style={{
             fontWeight: "900",
             fontSize: "3em",
             textAlign: "center",
-            textTransform: "uppercase"
+            textTransform: "uppercase",
+            color: "#0097A7",
+
           }}
-        >Triage App</h1>
+        >Conversation</h1>
         <MuiThemeProvider>
           <Tabs>
             {

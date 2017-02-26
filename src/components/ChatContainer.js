@@ -4,7 +4,7 @@ import Paper from 'material-ui/Paper';
 
 //CSS
 const style={
-  backgroundColor: "lightgrey",
+  backgroundColor: "#E0E0E0",
   display: "flex",
   flexDirection: "row",
   padding: "1vw",

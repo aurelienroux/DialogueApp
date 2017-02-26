@@ -20,7 +20,7 @@ const compStyle={
 }
 
 const userStyle={
-  backgroundColor: "steelblue",
+  backgroundColor: "#0097A7",
   borderRadius: "10px",
   margin: "1em 0 1em 0.5em",
   padding: "0.5vh 0.5em",
@@ -29,7 +29,7 @@ const userStyle={
 
 const appStyle={
   alignSelf: "flex-end",
-  backgroundColor: "grey",
+  backgroundColor: "#BDBDBD",
   borderRadius: "10px",
   margin: "1em 0.5em 1em 0",
   padding: "0.5vh 0.5em",

@@ -28,6 +28,7 @@ const otherQuestion={
 
 const btn={
   margin: "10px",
+  backgroundColor: "black"
 }
 
 //Main Component
@@ -128,7 +129,7 @@ class GeneralForm extends Component {
             {/* <button style={btn} onClick={this.sendQuestions.bind(this)}>click here to send questions</button> */}
             <RaisedButton
               fullWidth={false}
-              icon={<FontIcon className="material-icons">done</FontIcon>}
+              icon={<FontIcon className="material-icons">assignment</FontIcon>}
               label="Click here to send questions"
               onClick={this.sendQuestions.bind(this)}
               primary={true}
@@ -136,17 +137,15 @@ class GeneralForm extends Component {
             />
             <RaisedButton
               fullWidth={false}
-              icon={<FontIcon className="material-icons">done</FontIcon>}
+              icon={<FontIcon className="material-icons">assignment</FontIcon>}
               label="General Questions"
-              onClick={this.sendQuestions.bind(this)}
               primary={true}
               style={btn}
             />
             <RaisedButton
               fullWidth={false}
-              icon={<FontIcon className="material-icons">done</FontIcon>}
+              icon={<FontIcon className="material-icons">assignment</FontIcon>}
               label="Allergies Questions"
-              onClick={this.sendQuestions.bind(this)}
               primary={true}
               style={btn}
             />
