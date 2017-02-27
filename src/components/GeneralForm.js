@@ -79,7 +79,7 @@ class GeneralForm extends Component {
             <div style={currentQuestion} key={question.ask}>
               <form onSubmit={this.sendHumanResponse}>
                 <TextField
-                  floatingLabelText={question.ask}
+                  floatingLabelText={question.askFriendly}
                   fullWidth={true}
                   id="inputField"
                   ref="inputField"
@@ -103,7 +103,7 @@ class GeneralForm extends Component {
               <TextField
                 defaultValue="..."
                 disabled={true}
-                floatingLabelText={question.ask}
+                floatingLabelText={question.askFriendly}
                 underlineDisabledStyle={{borderBottom: "1px solid"}}
               />
             </div>

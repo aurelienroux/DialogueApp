@@ -29,14 +29,27 @@ class headerTabs extends Component {
         <MuiThemeProvider>
           <Tabs>
             {
-              this.props.conversations.map(conv => (
-                <Tab
-                  label={conv.id}
-                  icon={<FontIcon className="material-icons">face</FontIcon>}
-                key={conv.user_id}>
-                  <ChatContainer conversation={conv} />
-                </Tab>
-              ))
+              this.props.conversations.map(conv => {
+                if(conv.state.needsHuman == true){
+                  return (
+                    <Tab
+                      label={conv.id}
+                      icon={<FontIcon className="material-icons">timer</FontIcon>}
+                      key={conv.user_id}>
+                      <ChatContainer conversation={conv} />
+                    </Tab>
+                  )
+                } else {
+                  return (
+                    <Tab
+                      label={conv.id}
+                      icon={<FontIcon className="material-icons">face</FontIcon>}
+                      key={conv.user_id}>
+                      <ChatContainer conversation={conv} />
+                    </Tab>
+                  )
+                }
+              })
             }
           </Tabs>
         </MuiThemeProvider>

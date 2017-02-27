@@ -76,21 +76,14 @@ class ChatBox extends Component {
             children={
               <div>
                 <p>{message.message}</p>
-                <p style={timestampStyle} >{message.time}</p>
-                {/*
-                <p style={timestampStyle} >{moment().format()}</p>
-                <p style={timestampStyle} >{moment().startOf('hour').fromNow()}</p>
-                <p style={timestampStyle} >{moment().startOf('day').fromNow()}</p>
-                <p style={timestampStyle} >{moment().startOf('minute').fromNow()}</p>
-                */}
                 <p style={timestampStyle} >
                   <FontIcon
                     className="material-icons"
                     style={{
-                      fontSize: "1.75em",
+                      fontSize: "1.50em",
                     }}
                     >timer</FontIcon>
-                  {moment().startOf({messageTime}).fromNow()}
+                  {moment(messageTime).fromNow()}
                  </p>
               </div>
             }
@@ -106,15 +99,14 @@ class ChatBox extends Component {
             children={
               <div>
                 <p>{message.message}</p>
-                <p style={timestampStyle} >{message.time}</p>
                 <p style={timestampStyle} >
                   <FontIcon
                     className="material-icons"
                     style={{
-                      fontSize: "1.75em"
+                      fontSize: "1.50em"
                     }}
                    >timer</FontIcon>
-                  {moment().startOf({messageTime}).fromNow()}
+                  {moment(messageTime).fromNow()}
                 </p>
               </div>
             }
