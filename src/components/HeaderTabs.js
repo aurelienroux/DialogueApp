@@ -23,7 +23,7 @@ class headerTabs extends Component {
             textAlign: "center",
             textTransform: "uppercase",
             color: "#00bcd4",
-
+            margin: "20px"
           }}
         >Conversation</h1>
         <MuiThemeProvider>

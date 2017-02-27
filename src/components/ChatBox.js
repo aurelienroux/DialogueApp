@@ -38,7 +38,7 @@ const appStyle={
 const chatBoxLimitStyle={
   display: "flex",
   flexDirection: "column",
-  height: "400px",
+  height: "300px",
   overflow: "auto"
 }
 

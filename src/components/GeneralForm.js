@@ -12,7 +12,7 @@ import FontIcon from 'material-ui/FontIcon';
 //CSS
 const compStyle={
   flex: "1",
-  height: "550px",
+  height: "450px",
   padding: "0.5em",
   overflow: "auto"
 }
