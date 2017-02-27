@@ -257,12 +257,6 @@ class App extends Component {
           maxWidth: "800px",
         }}>
         <HeaderTabs conversations={this.state.conversations} />
-        <p
-          style={{
-            fontSize:"0.75em",
-            textAlign: "center",
-          }}
-        >DecodeMtl 2016 &copy;</p>
       </div>
     );
   }

@@ -12,7 +12,7 @@ import FontIcon from 'material-ui/FontIcon';
 //CSS
 const compStyle={
   flex: "1",
-  height: "450px",
+  // height: "450px",
   padding: "0.5em",
   overflow: "auto"
 }
@@ -33,7 +33,6 @@ const btn={
 
 //Main Component
 class GeneralForm extends Component {
-  //IS WORKING
   sendQuestions = () => {
     socket.emit(
       'send_form',
@@ -41,7 +40,6 @@ class GeneralForm extends Component {
     );
   }
 
-  //NOT WORKING
   sendHumanResponse = (e) => {
     e.preventDefault()
     let val = this.refs.inputField.input.value
@@ -74,7 +72,7 @@ class GeneralForm extends Component {
             </div>
           )
         }
-        else if (question.isAsking === true){
+        else if (question.isAsking === true && this.props.conversation.state.needsHuman == true ) {
           return (
             <div style={currentQuestion} key={question.ask}>
               <form onSubmit={this.sendHumanResponse}>
@@ -92,12 +90,25 @@ class GeneralForm extends Component {
                   onClick={this.sendHumanResponse.bind(this)}
                   primary={true}
                 />
-                {/* <input type="text" ref="inputField"></input>
-                <button onClick={this.sendHumanResponse.bind(this)} >click</button> */}
               </form>
             </div>
           )
-        } else {
+        } else if (question.isAsking === true){
+          return (
+            <div style={currentQuestion} key={question.ask}>
+              <form onSubmit={this.sendHumanResponse}>
+                <TextField
+                  floatingLabelText={question.askFriendly}
+                  fullWidth={true}
+                  id="inputField"
+                  ref="inputField"
+                  style={{margin:"5px 0 20px"}}
+                />
+              </form>
+            </div>
+          )
+        }
+        else {
           return (
             <div key={question.ask} style={otherQuestion} >
               <TextField

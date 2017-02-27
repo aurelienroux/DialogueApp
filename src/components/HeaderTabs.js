@@ -11,6 +11,9 @@ import FontIcon from 'material-ui/FontIcon';
 //Import Components
 import ChatContainer from './ChatContainer'
 
+//CSS
+
+
 //Main Component
 class headerTabs extends Component {
   render(){
@@ -33,8 +36,9 @@ class headerTabs extends Component {
                 if(conv.state.needsHuman == true){
                   return (
                     <Tab
-                      label={conv.id}
-                      icon={<FontIcon className="material-icons">timer</FontIcon>}
+                      // label={conv.id}
+                      label={<FontIcon color={'#E57373'} className="material-icons">face</FontIcon>}
+                      // icon={<FontIcon color={'red'} className="material-icons">timer</FontIcon>}
                       key={conv.user_id}>
                       <ChatContainer conversation={conv} />
                     </Tab>
@@ -42,8 +46,8 @@ class headerTabs extends Component {
                 } else {
                   return (
                     <Tab
-                      label={conv.id}
-                      icon={<FontIcon className="material-icons">face</FontIcon>}
+                      label={<FontIcon color={'#fff'} className="material-icons">face</FontIcon>}
+                      // icon={<FontIcon className="material-icons">face</FontIcon>}
                       key={conv.user_id}>
                       <ChatContainer conversation={conv} />
                     </Tab>

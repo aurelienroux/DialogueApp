@@ -38,7 +38,7 @@ const appStyle={
 const chatBoxLimitStyle={
   display: "flex",
   flexDirection: "column",
-  height: "300px",
+  // height: "300px",
   overflow: "auto"
 }
 
@@ -143,7 +143,7 @@ class ChatBox extends Component {
 
           <form onSubmit={this.sendChatResponse.bind(this)}>
             <TextField
-              floatingLabelText="Type question here"
+              hintText="Type question here"
               fullWidth={true}
               id="inputField"
               ref="inputField"
@@ -153,14 +153,14 @@ class ChatBox extends Component {
 
             {/* <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input> */}
             {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
-
+{/*
             <RaisedButton
               fullWidth={true}
               icon={<FontIcon className="material-icons">done</FontIcon>}
               label="Confirm"
               onClick={this.sendChatResponse.bind(this)}
               primary={true}
-            />
+            /> */}
           </form>
         </div>
       </div>
