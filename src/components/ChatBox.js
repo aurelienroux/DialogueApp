@@ -51,7 +51,7 @@ const timestampStyle={
 class ChatBox extends Component {
   sendChatResponse(e){
     e.preventDefault();
-    let val = this.refs.inputField.getValue()
+    let val = this.refs.inputField.input.value
     socket.emit(
       'send_human_message',
       {
@@ -59,9 +59,9 @@ class ChatBox extends Component {
         message: val
       }
     );
-    this.refs.inputField.value = "";
+    this.refs.inputField.input.value = "";
+    console.log("chat response " + val);
   }
-
 
   render(){
     const messages = this.props.conversation.messages;
@@ -147,26 +147,30 @@ class ChatBox extends Component {
         </div>
 
         <Divider />
+        <div style={{padding:"0.5em"}}>
 
-          <TextField
-            floatingLabelText="Type question here"
-            fullWidth={true}
-            id="inputField"
-            ref="inputField"
-            multiLine={true}
-            style={{margin:"5px 0 20px"}}
-          />
+          <form onSubmit={this.sendChatResponse.bind(this)}>
+            <TextField
+              floatingLabelText="Type question here"
+              fullWidth={true}
+              id="inputField"
+              ref="inputField"
+              // multiLine={true}
+              style={{margin:"5px 0 20px"}}
+            />
 
-          {/* <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input> */}
-          {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
+            {/* <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input> */}
+            {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
 
-          <RaisedButton
-            icon={<FontIcon className="material-icons">done</FontIcon>}
-            label="Confirm"
-            onClick={this.sendChatResponse.bind(this)}
-            primary={true}
-          />
-
+            <RaisedButton
+              fullWidth={true}
+              icon={<FontIcon className="material-icons">done</FontIcon>}
+              label="Confirm"
+              onClick={this.sendChatResponse.bind(this)}
+              primary={true}
+            />
+          </form>
+        </div>
       </div>
     )
   }

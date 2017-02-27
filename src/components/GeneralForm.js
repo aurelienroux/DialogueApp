@@ -52,7 +52,7 @@ class GeneralForm extends Component {
         text: val
       },
     )
-    // this.refs.inputField.value = "";
+    this.refs.inputField.input.value = "";
     console.log("human res " + val)
   }
 
@@ -77,22 +77,24 @@ class GeneralForm extends Component {
         else if (question.isAsking === true){
           return (
             <div style={currentQuestion} key={question.ask}>
-              <TextField
-                floatingLabelText={question.ask}
-                fullWidth={true}
-                id="inputField"
-                ref="inputField"
-                style={{margin:"5px 0 20px"}}
-              />
-              <RaisedButton
-                fullWidth={true}
-                icon={<FontIcon className="material-icons">done</FontIcon>}
-                label="Confirm"
-                onClick={this.sendHumanResponse.bind(this)}
-                primary={true}
-              />
-              {/* <input type="text" ref="inputField"></input>
-              <button onClick={this.sendHumanResponse.bind(this)} >click</button> */}
+              <form onSubmit={this.sendHumanResponse}>
+                <TextField
+                  floatingLabelText={question.ask}
+                  fullWidth={true}
+                  id="inputField"
+                  ref="inputField"
+                  style={{margin:"5px 0 20px"}}
+                />
+                <RaisedButton
+                  fullWidth={true}
+                  icon={<FontIcon className="material-icons">done</FontIcon>}
+                  label="Confirm"
+                  onClick={this.sendHumanResponse.bind(this)}
+                  primary={true}
+                />
+                {/* <input type="text" ref="inputField"></input>
+                <button onClick={this.sendHumanResponse.bind(this)} >click</button> */}
+              </form>
             </div>
           )
         } else {
@@ -175,9 +177,7 @@ class GeneralForm extends Component {
             </FontIcon>
         </div>
         <div style={compStyle}>
-          <form>
-            {questionsRender}
-          </form>
+          {questionsRender}
         </div>
       </div>
     )
