@@ -18,7 +18,7 @@ const compStyle={
 }
 
 const currentQuestion={
-  backgroundColor: "#0097A7",
+  backgroundColor: "#80DEEA",
   marginBottom: "20px",
   color: "blue"
 }
@@ -44,14 +44,16 @@ class GeneralForm extends Component {
   //NOT WORKING
   sendHumanResponse = (e) => {
     e.preventDefault()
+    let val = this.refs.inputField.input.value
     socket.emit(
       'send_human_response',
       {
         user_id: this.props.conversation.user_id,
-        text: this.refs.inputField.value,
+        text: val
       },
     )
-    console.log("human res " + this.refs.inputField.value)
+    // this.refs.inputField.value = "";
+    console.log("human res " + val)
   }
 
   render(){
@@ -65,7 +67,7 @@ class GeneralForm extends Component {
               <TextField
                 defaultValue={question.answer}
                 disabled={true}
-                floatingLabelText={question.ask}
+                floatingLabelText={question.askFriendly}
                 hintText="Disabled Hint Text"
                 underlineDisabledStyle={{borderBottom: "1px solid"}}
               />
@@ -75,21 +77,22 @@ class GeneralForm extends Component {
         else if (question.isAsking === true){
           return (
             <div style={currentQuestion} key={question.ask}>
-              {/* <TextField
+              <TextField
                 floatingLabelText={question.ask}
                 fullWidth={true}
-                ref="input"
+                id="inputField"
+                ref="inputField"
                 style={{margin:"5px 0 20px"}}
               />
               <RaisedButton
                 fullWidth={true}
                 icon={<FontIcon className="material-icons">done</FontIcon>}
                 label="Confirm"
-                // onClick={this.sendHumanResponse.bind(this)}
+                onClick={this.sendHumanResponse.bind(this)}
                 primary={true}
-              /> */}
-              <input type="text" ref="inputField"></input>
-              <button onClick={this.sendHumanResponse.bind(this)} >click</button>
+              />
+              {/* <input type="text" ref="inputField"></input>
+              <button onClick={this.sendHumanResponse.bind(this)} >click</button> */}
             </div>
           )
         } else {
@@ -135,20 +138,20 @@ class GeneralForm extends Component {
               style={btn}
             />
             <RaisedButton
+              disabled={true}
               fullWidth={false}
               icon={<FontIcon className="material-icons">assignment</FontIcon>}
               label="General Questions"
               primary={true}
               style={btn}
-              disabled={true}
             />
             <RaisedButton
+              disabled={true}
               fullWidth={false}
               icon={<FontIcon className="material-icons">assignment</FontIcon>}
               label="Allergies Questions"
               primary={true}
               style={btn}
-              disabled={true}
             />
           </div>
         </div>

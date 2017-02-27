@@ -20,8 +20,7 @@ const compStyle={
 }
 
 const userStyle={
-  backgroundColor: "#0097A7",
-  borderRadius: "10px",
+  backgroundColor: "#80DEEA",
   margin: "1em 0 1em 0.5em",
   padding: "0.5vh 0.5em",
   width: "75%"
@@ -30,7 +29,6 @@ const userStyle={
 const appStyle={
   alignSelf: "flex-end",
   backgroundColor: "#E0E0E0",
-  borderRadius: "10px",
   margin: "1em 0.5em 1em 0",
   padding: "0.5vh 0.5em",
   textAlign: "right",
@@ -51,17 +49,18 @@ const timestampStyle={
 
 //Main Component
 class ChatBox extends Component {
-  sendChatResponse(){
-      let val = this.refs.inputTest.value
-      socket.emit(
-        'send_human_message',
-        {
-          user_id: this.props.conversation.user_id,
-          message: val
-        }
-      );
-      this.refs.inputTest.value = "";
-    }
+  sendChatResponse(e){
+    e.preventDefault();
+    let val = this.refs.inputField.getValue()
+    socket.emit(
+      'send_human_message',
+      {
+        user_id: this.props.conversation.user_id,
+        message: val
+      }
+    );
+    this.refs.inputField.value = "";
+  }
 
 
   render(){
@@ -72,7 +71,7 @@ class ChatBox extends Component {
         return (
           <Paper
             style={appStyle}
-            zDepth={1}
+            zDepth={2}
             key={idx}
             children={
               <div>
@@ -102,7 +101,7 @@ class ChatBox extends Component {
         return (
           <Paper
             style={userStyle}
-            zDepth={1}
+            zDepth={2}
             key={idx}
             children={
               <div>
@@ -149,22 +148,24 @@ class ChatBox extends Component {
 
         <Divider />
 
-        <TextField
-          floatingLabelText="Type question here"
-          fullWidth={true}
-          ref="inputTest"
-          style={{margin:"5px 0 20px"}}
-        />
+          <TextField
+            floatingLabelText="Type question here"
+            fullWidth={true}
+            id="inputField"
+            ref="inputField"
+            multiLine={true}
+            style={{margin:"5px 0 20px"}}
+          />
 
-        <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input>
-        {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
+          {/* <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input> */}
+          {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
 
-        <RaisedButton
-          icon={<FontIcon className="material-icons">done</FontIcon>}
-          label="Confirm"
-          onClick={this.sendChatResponse.bind(this)}
-          primary={true}
-        />
+          <RaisedButton
+            icon={<FontIcon className="material-icons">done</FontIcon>}
+            label="Confirm"
+            onClick={this.sendChatResponse.bind(this)}
+            primary={true}
+          />
 
       </div>
     )

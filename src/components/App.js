@@ -261,7 +261,6 @@ class App extends Component {
           style={{
             fontSize:"0.75em",
             textAlign: "center",
-            color: "#0097A7"
           }}
         >DecodeMtl 2016 &copy;</p>
       </div>

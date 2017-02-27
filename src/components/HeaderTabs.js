@@ -22,7 +22,7 @@ class headerTabs extends Component {
             fontSize: "3em",
             textAlign: "center",
             textTransform: "uppercase",
-            color: "#0097A7",
+            color: "#00bcd4",
 
           }}
         >Conversation</h1>
