@@ -19,8 +19,8 @@ const compStyle={
 }
 
 const titleStyle = {
-  fontWeight: "900",
   color: "#00bcd4",
+  fontWeight: "900",
   fontSize: "2em",
   margin: "20px",
   textAlign: "center",
@@ -28,14 +28,12 @@ const titleStyle = {
 }
 
 const tabsStyle = {
-  border:"2px solid black",
   display: "flex",
   flexDirection: "column",
   flexGrow: "1",
 }
 
 const uniTabStyle={
-  border: "2px solid tomato",
   // display: "flex"
 }
 

@@ -9,7 +9,6 @@ const compStyle={
   flexDirection: "row",
   flexGrow: "1",
   padding: "1vw",
-  border: "2px solid coral"
 }
 
 const childStyle={
