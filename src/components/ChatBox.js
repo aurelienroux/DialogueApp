@@ -17,14 +17,14 @@ import FontIcon from 'material-ui/FontIcon';
 //CSS
 const compStyle={
   display: "flex",
-  flex: "1",
+  flexGrow: "1",
   flexDirection: "column",
 }
 
 const userStyle={
   backgroundColor: "#80DEEA",
   margin: "1em 0 1em 0.5em",
-  padding: "0.5vh 0.5em",
+  padding: "0.5em",
   width: "75%"
 }
 
@@ -32,7 +32,7 @@ const appStyle={
   alignSelf: "flex-end",
   backgroundColor: "#E0E0E0",
   margin: "1em 0.5em 1em 0",
-  padding: "0.5vh 0.5em",
+  padding: "0.5em",
   textAlign: "right",
   width: "75%"
 }
@@ -40,14 +40,15 @@ const appStyle={
 const chatBoxLimitStyle={
   display: "flex",
   flexDirection: "column",
-  flex: "1",
+  flexGrow: "1",
   maxHeight: "50vh",
   overflow: "auto"
 }
 
 const timestampStyle={
   fontSize: "0.65em",
-  margin: "0.5em"
+  margin: "0.5em",
+  verticalAlign:"bottom"
 }
 
 //Main Component
@@ -87,16 +88,17 @@ class ChatBox extends Component {
             key={idx}
             children={
               <div>
-                <p>{message.message}</p>
-                <p style={timestampStyle} >
+                <span style={{marginTop: "0"}}>{message.message}</span><br/>
+                <span style={timestampStyle} >
                   <FontIcon
                     className="material-icons"
                     style={{
                       fontSize: "1.50em",
+                      verticalAlign:"middle"
                     }}
                     >timer</FontIcon>
                   {moment(messageTime).fromNow()}
-                 </p>
+                </span>
               </div>
             }
           />
@@ -110,16 +112,17 @@ class ChatBox extends Component {
             key={idx}
             children={
               <div>
-                <p>{message.message}</p>
-                <p style={timestampStyle} >
+                <span style={{marginTop: "0"}} >{message.message}</span><br/>
+                <span style={timestampStyle} >
                   <FontIcon
                     className="material-icons"
                     style={{
-                      fontSize: "1.50em"
+                      fontSize: "1.50em",
+                      verticalAlign:"middle"
                     }}
                    >timer</FontIcon>
                   {moment(messageTime).fromNow()}
-                </p>
+                </span>
               </div>
             }
           />
@@ -161,7 +164,8 @@ class ChatBox extends Component {
               fullWidth={true}
               id="inputField"
               ref="inputField"
-              style={{margin:"5px 0 20px"}}
+              style={{padding: "0 8px"}}
+              underlineStyle={{display: "none"}}
             />
           </form>
         </div>
