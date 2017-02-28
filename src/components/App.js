@@ -1,10 +1,19 @@
 //Libs
 import React, { Component } from 'react';
-
 import socket from '../socket';
 
 //Import Components
 import HeaderTabs from './HeaderTabs'
+
+//CSS
+const compStyle={
+  display: "flex",
+  fontFamily: "Roboto",
+  height: "100vh",
+  margin: "0 auto",
+  maxWidth: "800px",
+  overflow: "auto"
+}
 
 //Main Component
 class App extends Component {
@@ -160,13 +169,6 @@ class App extends Component {
 
     }
 
-
-
-  // componentDidUpdate(prevProps, prevState){
-  //   if(prevProps !== this.state)
-  // }
-
-
   componentDidMount(){
     fetch('https://triage-project.herokuapp.com/conv')
     .then(res => res.json())
@@ -249,15 +251,7 @@ class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          fontFamily: "Roboto",
-          height: "100vh",
-          margin: "0 auto",
-          maxWidth: "800px",
-          overflow: "auto"
-        }}>
+      <div style={compStyle}>
         <HeaderTabs conversations={this.state.conversations} />
       </div>
     );
