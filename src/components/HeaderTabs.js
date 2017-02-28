@@ -27,36 +27,49 @@ const titleStyle = {
   textTransform: "uppercase",
 }
 
+const tabsStyle = {
+  border:"2px solid black",
+  display: "flex",
+  flexDirection: "column",
+  flexGrow: "1",
+}
+
+const uniTabStyle={
+  border: "2px solid tomato",
+  // display: "flex"
+}
+
 //Main Component
 class headerTabs extends Component {
   render(){
     return(
       <div style={compStyle}>
         <h1 style={titleStyle}>Conversation</h1>
-        <MuiThemeProvider>
-          <Tabs>
-            {
-              this.props.conversations.map(conv => {
-                if(conv.state.needsHuman == true){
-                  return (
-                    <Tab
-                      label={<FontIcon color={'#00E676'} className="material-icons">face</FontIcon>}
-                      key={conv.user_id}
-                    >
-                      <ChatContainer conversation={conv} />
-                    </Tab>
-                  )
-                } else {
-                  return (
-                    <Tab
-                      label={<FontIcon color={'#fff'} className="material-icons">face</FontIcon>}
-                      key={conv.user_id}>
-                      <ChatContainer conversation={conv} />
-                    </Tab>
-                  )
-                }
-              })
-            }
+        <MuiThemeProvider >
+          <Tabs style={tabsStyle}>
+            {this.props.conversations.map(conv => {
+              if(conv.state.needsHuman == true){
+                return (
+                  <Tab
+                    label={
+                      <FontIcon color={'#00E676'} className="material-icons">face</FontIcon>
+                    }
+                    key={conv.user_id}
+                    style={uniTabStyle}
+                  >
+                    <ChatContainer conversation={conv} />
+                  </Tab>
+                )
+              } else {
+                return (
+                  <Tab
+                    label={<FontIcon color={'#fff'} className="material-icons">face</FontIcon>}
+                    key={conv.user_id}>
+                    <ChatContainer conversation={conv} />
+                  </Tab>
+                )
+              }
+            })}
           </Tabs>
         </MuiThemeProvider>
       </div>

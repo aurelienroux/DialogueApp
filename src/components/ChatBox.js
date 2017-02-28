@@ -23,7 +23,7 @@ const compStyle={
 
 const userStyle={
   backgroundColor: "#80DEEA",
-  margin: "1em 0 1em 0.5em",
+  margin: "1em 0 0 1em",
   padding: "0.5em",
   width: "75%"
 }
@@ -31,7 +31,7 @@ const userStyle={
 const appStyle={
   alignSelf: "flex-end",
   backgroundColor: "#E0E0E0",
-  margin: "1em 0.5em 1em 0",
+  margin: "1em 1em 0 0",
   padding: "0.5em",
   textAlign: "right",
   width: "75%"
@@ -87,7 +87,7 @@ class ChatBox extends Component {
       if(message.sender === 'app'){
         let messageTime = message.time
         return (
-          <Paper style={appStyle} zDepth={2} key={idx} >
+          <Paper style={appStyle} zDepth={1} key={idx} >
             <div>
               <span style={{marginTop: "0"}}>{message.message}</span><br/>
               <span style={timestampStyle} >
@@ -102,7 +102,7 @@ class ChatBox extends Component {
       } else {
         let messageTime = message.time
         return (
-          <Paper style={userStyle} zDepth={2} key={idx} >
+          <Paper style={userStyle} zDepth={1} key={idx} >
             <div>
               <span style={{marginTop: "0"}} >{message.message}</span><br/>
               <span style={timestampStyle} >
