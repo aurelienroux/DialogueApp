@@ -67,10 +67,11 @@ class ChatBox extends Component {
   }
 
   scrollToBottom = () => {
-    window.scrollTo(0,5500)
+    let anchor = this.refs.anchor
+    anchor.scrollIntoView({block:"end", behavior: "smooth"})
   }
 
-  componentDidMount () {
+  componentDidUpdate () {
     this.scrollToBottom();
   }
 
@@ -148,7 +149,9 @@ class ChatBox extends Component {
 
         <div style={chatBoxLimitStyle}>
           {convItem}
+          <div ref="anchor"></div>
         </div>
+
 
         <Divider />
         <div style={{flex:"0"}}>
