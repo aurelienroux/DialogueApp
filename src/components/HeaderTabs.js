@@ -12,34 +12,48 @@ import FontIcon from 'material-ui/FontIcon';
 import ChatContainer from './ChatContainer'
 
 //CSS
+const compStyle={
+  display:"flex",
+  flexDirection: "column",
+  flexGrow: "1",
+}
 
+const titleStyle = {
+  fontWeight: "900",
+  fontSize: "2em",
+  textAlign: "center",
+  textTransform: "uppercase",
+  color: "#00bcd4",
+  margin: "20px"
+}
+
+const tabsStyle={
+  display: "flex",
+  flexDirection: "column",
+  flexGrow: "1",
+}
+
+const uniTabStyle={
+  border: "2px dashed green",
+}
 
 //Main Component
 class headerTabs extends Component {
   render(){
     return(
-      <div >
-        <h1
-          style={{
-            fontWeight: "900",
-            fontSize: "3em",
-            textAlign: "center",
-            textTransform: "uppercase",
-            color: "#00bcd4",
-            margin: "20px"
-          }}
-        >Conversation</h1>
+      <div style={compStyle}>
+        <h1 style={titleStyle}>Conversation</h1>
         <MuiThemeProvider>
-          <Tabs>
+          <Tabs style={tabsStyle}>
             {
               this.props.conversations.map(conv => {
                 if(conv.state.needsHuman == true){
                   return (
                     <Tab
-                      // label={conv.id}
-                      label={<FontIcon color={'#E57373'} className="material-icons">face</FontIcon>}
-                      // icon={<FontIcon color={'red'} className="material-icons">timer</FontIcon>}
-                      key={conv.user_id}>
+                      label={<FontIcon color={'#00E676'} className="material-icons">face</FontIcon>}
+                      key={conv.user_id}
+                      style = {uniTabStyle}
+                    >
                       <ChatContainer conversation={conv} />
                     </Tab>
                   )
@@ -47,7 +61,6 @@ class headerTabs extends Component {
                   return (
                     <Tab
                       label={<FontIcon color={'#fff'} className="material-icons">face</FontIcon>}
-                      // icon={<FontIcon className="material-icons">face</FontIcon>}
                       key={conv.user_id}>
                       <ChatContainer conversation={conv} />
                     </Tab>
