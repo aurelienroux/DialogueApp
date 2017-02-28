@@ -178,7 +178,7 @@ class GeneralForm extends Component {
             backgroundColor: "#00bcd4",
             color: "rgba(255,255,255, 0.7)",
             fontSize: "14px",
-            flex: "0",
+            flex: "1",
             padding: "1em",
             textAlign: "center",
             textTransform: "uppercase",

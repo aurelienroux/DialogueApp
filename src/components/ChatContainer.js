@@ -12,8 +12,8 @@ const compStyle={
 }
 
 const childStyle={
-  display: "flex",
-  flexGrow: "1",
+  // display: "flex",
+  // flexGrow: "1",
   margin: "1vw",
 }
 
@@ -26,10 +26,10 @@ class ChatContainer extends Component {
   render(){
     return(
       <div style={compStyle} >
-        <Paper className="chatContainerChild" style={childStyle}>
+        <Paper style={childStyle}>
           <ChatBox conversation={this.props.conversation} />
         </Paper>
-        <Paper className="chatContainerChild" style={childStyle}>
+        <Paper style={childStyle}>
           <GeneralForm conversation={this.props.conversation} />
         </Paper>
       </div>

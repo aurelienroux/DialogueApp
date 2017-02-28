@@ -11,7 +11,7 @@ const compStyle={
   fontFamily: "Roboto",
   height: "100vh",
   margin: "0 auto",
-  maxWidth: "800px",
+  maxWidth: "700px",
   overflow: "auto"
 }
 

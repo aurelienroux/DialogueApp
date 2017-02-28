@@ -16,7 +16,6 @@ const compStyle={
   display:"flex",
   flexDirection: "column",
   flexGrow: "1",
-  border: "1px solid tomato"
 }
 
 const titleStyle = {
@@ -28,15 +27,6 @@ const titleStyle = {
   textTransform: "uppercase",
 }
 
-const tabsStyle={
-  display: "flex",
-  flexDirection: "column",
-  flexGrow: "1",
-}
-
-const uniTabStyle={
-}
-
 //Main Component
 class headerTabs extends Component {
   render(){
@@ -44,7 +34,7 @@ class headerTabs extends Component {
       <div style={compStyle}>
         <h1 style={titleStyle}>Conversation</h1>
         <MuiThemeProvider>
-          <Tabs style={tabsStyle}>
+          <Tabs>
             {
               this.props.conversations.map(conv => {
                 if(conv.state.needsHuman == true){
@@ -52,7 +42,6 @@ class headerTabs extends Component {
                     <Tab
                       label={<FontIcon color={'#00E676'} className="material-icons">face</FontIcon>}
                       key={conv.user_id}
-                      style = {uniTabStyle}
                     >
                       <ChatContainer conversation={conv} />
                     </Tab>
