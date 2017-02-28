@@ -1,6 +1,8 @@
 //Libs
 import React, { Component } from 'react'
 var moment = require('moment');
+import ReactDOM from 'react-dom';
+
 
 //WebSocket
 import socket from '../socket';
@@ -38,7 +40,8 @@ const appStyle={
 const chatBoxLimitStyle={
   display: "flex",
   flexDirection: "column",
-  // height: "300px",
+  flex: "1",
+  maxHeight: "50vh",
   overflow: "auto"
 }
 
@@ -61,6 +64,14 @@ class ChatBox extends Component {
     );
     this.refs.inputField.input.value = "";
     console.log("chat response " + val);
+  }
+
+  scrollToBottom = () => {
+    window.scrollTo(0,500)
+  }
+
+  componentDidMount () {
+    this.scrollToBottom();
   }
 
   render(){
@@ -122,6 +133,7 @@ class ChatBox extends Component {
             backgroundColor: "#00bcd4",
             fontSize: "14px",
             padding: "1em",
+            flex: "0",
             textTransform: "uppercase",
             textAlign: "center",
           }}
@@ -139,28 +151,15 @@ class ChatBox extends Component {
         </div>
 
         <Divider />
-        <div style={{padding:"0.5em"}}>
-
+        <div style={{flex:"0"}}>
           <form onSubmit={this.sendChatResponse.bind(this)}>
             <TextField
               hintText="Type question here"
               fullWidth={true}
               id="inputField"
               ref="inputField"
-              // multiLine={true}
               style={{margin:"5px 0 20px"}}
             />
-
-            {/* <input type="text" style={{border:"1px solid tomato"}} ref="inputTest"></input> */}
-            {/* <button onClick={this.sendChatResponse.bind(this)}>click</button> */}
-{/*
-            <RaisedButton
-              fullWidth={true}
-              icon={<FontIcon className="material-icons">done</FontIcon>}
-              label="Confirm"
-              onClick={this.sendChatResponse.bind(this)}
-              primary={true}
-            /> */}
           </form>
         </div>
       </div>
