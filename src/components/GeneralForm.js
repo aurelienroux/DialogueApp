@@ -13,6 +13,8 @@ import FontIcon from 'material-ui/FontIcon';
 const compStyle={
   flex: "1",
   padding: "0.5em",
+  maxHeight: "60vh",
+  overflow: "auto"
 }
 
 const currentQuestion={
@@ -176,6 +178,7 @@ class GeneralForm extends Component {
             backgroundColor: "#00bcd4",
             color: "rgba(255,255,255, 0.7)",
             fontSize: "14px",
+            flex: "0",
             padding: "1em",
             textAlign: "center",
             textTransform: "uppercase",

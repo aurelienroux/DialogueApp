@@ -67,7 +67,7 @@ class ChatBox extends Component {
   }
 
   scrollToBottom = () => {
-    window.scrollTo(0,500)
+    window.scrollTo(0,5500)
   }
 
   componentDidMount () {
