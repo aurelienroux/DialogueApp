@@ -51,6 +51,11 @@ const timestampStyle={
   verticalAlign:"bottom"
 }
 
+const fontIconStyle = {
+  fontSize: "1.50em",
+  verticalAlign:"middle"
+}
+
 //Main Component
 class ChatBox extends Component {
   sendChatResponse(e){
@@ -82,50 +87,32 @@ class ChatBox extends Component {
       if(message.sender === 'app'){
         let messageTime = message.time
         return (
-          <Paper
-            style={appStyle}
-            zDepth={2}
-            key={idx}
-            children={
-              <div>
-                <span style={{marginTop: "0"}}>{message.message}</span><br/>
-                <span style={timestampStyle} >
-                  <FontIcon
-                    className="material-icons"
-                    style={{
-                      fontSize: "1.50em",
-                      verticalAlign:"middle"
-                    }}
-                    >timer</FontIcon>
-                  {moment(messageTime).fromNow()}
-                </span>
-              </div>
-            }
-          />
+          <Paper style={appStyle} zDepth={2} key={idx} >
+            <div>
+              <span style={{marginTop: "0"}}>{message.message}</span><br/>
+              <span style={timestampStyle} >
+                <FontIcon className="material-icons" style={fontIconStyle}>
+                  timer
+                </FontIcon>
+                {moment(messageTime).fromNow()}
+              </span>
+            </div>
+          </Paper>
         )
       } else {
         let messageTime = message.time
         return (
-          <Paper
-            style={userStyle}
-            zDepth={2}
-            key={idx}
-            children={
-              <div>
-                <span style={{marginTop: "0"}} >{message.message}</span><br/>
-                <span style={timestampStyle} >
-                  <FontIcon
-                    className="material-icons"
-                    style={{
-                      fontSize: "1.50em",
-                      verticalAlign:"middle"
-                    }}
-                   >timer</FontIcon>
-                  {moment(messageTime).fromNow()}
-                </span>
-              </div>
-            }
-          />
+          <Paper style={userStyle} zDepth={2} key={idx} >
+            <div>
+              <span style={{marginTop: "0"}} >{message.message}</span><br/>
+              <span style={timestampStyle} >
+                <FontIcon className="material-icons" style={fontIconStyle}>
+                  timer
+                </FontIcon>
+                {moment(messageTime).fromNow()}
+              </span>
+            </div>
+          </Paper>
         )
       }
     })
@@ -142,12 +129,9 @@ class ChatBox extends Component {
             textAlign: "center",
           }}
         >
-          <FontIcon
-            className="material-icons"
-            style={{
-              color: "rgba(255,255,255, 0.7)",
-            }}
-          >forum</FontIcon>
+          <FontIcon className="material-icons" style={{color: "rgba(255,255,255, 0.7)"}}>
+            forum
+          </FontIcon>
         </div>
 
         <div style={chatBoxLimitStyle}>

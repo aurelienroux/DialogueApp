@@ -16,15 +16,16 @@ const compStyle={
   display:"flex",
   flexDirection: "column",
   flexGrow: "1",
+  border: "1px solid tomato"
 }
 
 const titleStyle = {
   fontWeight: "900",
+  color: "#00bcd4",
   fontSize: "2em",
+  margin: "20px",
   textAlign: "center",
   textTransform: "uppercase",
-  color: "#00bcd4",
-  margin: "20px"
 }
 
 const tabsStyle={
@@ -34,7 +35,6 @@ const tabsStyle={
 }
 
 const uniTabStyle={
-  border: "2px dashed green",
 }
 
 //Main Component
