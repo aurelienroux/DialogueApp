@@ -3,15 +3,17 @@ import React, { Component } from 'react'
 import Paper from 'material-ui/Paper';
 
 //CSS
-const style={
+const compStyle={
   backgroundColor: "#E0E0E0",
   display: "flex",
   flexDirection: "row",
+  flexGrow: "1",
   padding: "1vw",
 }
 
 const childStyle={
-  flex: "1",
+  display: "flex",
+  flexGrow: "1",
   margin: "1vw",
 }
 
@@ -23,17 +25,13 @@ import GeneralForm from './GeneralForm'
 class ChatContainer extends Component {
   render(){
     return(
-      <div id="chatContainer" style={style} >
-        <Paper
-          children={ <ChatBox conversation={this.props.conversation} /> }
-          className="chatContainerChild"
-          style={childStyle}
-        />
-        <Paper
-          children={ <GeneralForm conversation={this.props.conversation} /> }
-          className="chatContainerChild"
-          style={childStyle}
-        />
+      <div style={compStyle} >
+        <Paper className="chatContainerChild" style={childStyle}>
+          <ChatBox conversation={this.props.conversation} />
+        </Paper>
+        <Paper className="chatContainerChild" style={childStyle}>
+          <GeneralForm conversation={this.props.conversation} />
+        </Paper>
       </div>
     )
   }
