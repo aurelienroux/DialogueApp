@@ -34,7 +34,7 @@ const tabsStyle = {
 }
 
 const uniTabStyle={
-  // display: "flex"
+  display: "flex",
 }
 
 //Main Component
@@ -44,7 +44,12 @@ class headerTabs extends Component {
       <div style={compStyle}>
         <h1 style={titleStyle}>Conversation</h1>
         <MuiThemeProvider >
-          <Tabs style={tabsStyle}>
+          <Tabs
+            style={tabsStyle}
+            // tabItemContainerStyle= {{display:"flex", flex:"1", border:"2px dashed blue"}}
+            tabTemplateStyle= {{display:"flex", border:"2px dotted red", flex:"1"}}
+            contentContainerStyle= {{display:"flex", flexDirection:"column", flex:"1", border:"2px solid green"}}
+          >
             {this.props.conversations.map(conv => {
               if(conv.state.needsHuman == true){
                 return (
@@ -53,7 +58,6 @@ class headerTabs extends Component {
                       <FontIcon color={'#00E676'} className="material-icons">face</FontIcon>
                     }
                     key={conv.user_id}
-                    style={uniTabStyle}
                   >
                     <ChatContainer conversation={conv} />
                   </Tab>
