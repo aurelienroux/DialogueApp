@@ -9,10 +9,12 @@ const compStyle={
   flexDirection: "row",
   flexGrow: "1",
   padding: "1vw",
+  height: '75vh'
 }
 
 const childStyle={
   display: "flex",
+  flexDirection: "column",
   flex: "1",
   margin: "1vw",
 }

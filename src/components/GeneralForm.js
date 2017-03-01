@@ -29,6 +29,7 @@ const otherQuestion={
 
 const btn={
   margin: "10px",
+  width: "93%"
 }
 
 //Main Component
@@ -72,7 +73,7 @@ class GeneralForm extends Component {
             </div>
           )
         }
-        else if (question.isAsking === true && this.props.conversation.state.needsHuman == true ) {
+        else if (question.isAsking === true && this.props.conversation.state.needsHuman === true ) {
           return (
             <div style={currentQuestion} key={question.ask}>
               <form onSubmit={this.sendHumanResponse}>
@@ -140,7 +141,7 @@ class GeneralForm extends Component {
                 }}
                 >assignment</FontIcon>
           </div>
-          <div style={{marginTop:"50px"}}>
+          <div>
             {/* <button style={btn} onClick={this.sendQuestions.bind(this)}>click here to send questions</button> */}
             <RaisedButton
               fullWidth={false}

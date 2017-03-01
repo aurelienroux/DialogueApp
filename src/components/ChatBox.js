@@ -1,14 +1,11 @@
 //Libs
 import React, { Component } from 'react'
 var moment = require('moment');
-import ReactDOM from 'react-dom';
-
 
 //WebSocket
 import socket from '../socket';
 
 //Material UI
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
@@ -23,7 +20,7 @@ const compStyle={
 
 const userStyle={
   backgroundColor: "#80DEEA",
-  margin: "1em 0 0 1em",
+  margin: "0.5em 0 0.5em 1em",
   padding: "0.5em",
   width: "75%"
 }
@@ -31,7 +28,7 @@ const userStyle={
 const appStyle={
   alignSelf: "flex-end",
   backgroundColor: "#E0E0E0",
-  margin: "1em 1em 0 0",
+  margin: "0.5em 1em 0.5em 0",
   padding: "0.5em",
   textAlign: "right",
   width: "75%"
@@ -41,7 +38,6 @@ const chatBoxLimitStyle={
   display: "flex",
   flexDirection: "column",
   flexGrow: "1",
-  maxHeight: "50vh",
   overflow: "auto"
 }
 

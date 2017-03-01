@@ -19,154 +19,147 @@ const compStyle={
 class App extends Component {
   state={
       conversations: [
-        {
-          id: 'first Id',
-          user_id: 'firstuser_Id',
-          state: {
-
-          },
-          messages: [
-            {
-              user_id: 'patient',
-              message: 'hello, how are you ^',
-              sender: 'user',
-              time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
-            },
-            {
-              user_id: 'nurse',
-              message: 'sending you some questions that are soooooo long that it just doenst make sense!!!',
-              sender: 'app',
-              time: '2017-01-01 15:05:25'
-            },
-            {
-              user_id: 'patienttwo',
-              message: 'i<ll look at that',
-              sender: 'user',
-              time: '2017-01-01 15:05:25'
-            },
-            {
-              user_id: 'patientthree',
-              message: 'hello, how are you ^',
-              sender: 'user',
-              time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
-            },
-            {
-              user_id: 'patientbutapp',
-              message: 'hello, how are you ^',
-              sender: 'app',
-              time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
-            },
-          ]
-        },
-        {
-          id: 'second Id',
-          user_id: 'seconduser_Id',
-          state: {
-
-
-
-                      needsHuman: true,
-                      questions: [
-                        {
-                          ask: 'do_you_smoke',
-                          accept: ['affirmative'],
-                          isAsking: false,
-                          answer: 'a lot!!'
-                        },
-                        {
-                          ask: 'do_you_have_allergies',
-                          accept: ['affirmative'],
-                          isAsking: false,
-                          answer: "not that I know of"
-                        },
-                        {
-                          ask: 'do_you_smoke_again',
-                          accept: ['affirmative'],
-                          isAsking: true
-                        }
-                      ]
-
-
-          },
-          messages: [
-            {
-              user_id: 'patient',
-              message: 'hello second conversation',
-            },
-            {
-              user_id: 'nurse',
-              message: 'i will send you some questions'
-            }
-          ]
-        },
-        {
-          id: 'thirdtId',
-          user_id: 'thirduser_Id',
-          state: {
-            needsHuman: true,
-            questions: [
-              {
-                ask: 'do_you_smoke'
-              }
-            ]
-          },
-          messages: [
-            {
-              user_id: 'patient',
-              message: 'hello',
-            },
-            {
-              user_id: 'nurse',
-              message: 'i will send you some questions'
-            }
-          ]
-        },
-        {
-          id: 'fourthtId',
-          user_id: 'thirduser_Id',
-          state: {
-            needsHuman: true,
-            questions: [
-              {
-                ask: 'do_you_smoke'
-              }
-            ]
-          },
-          messages: [
-            {
-              user_id: 'patient',
-              message: 'hello',
-            },
-            {
-              user_id: 'nurse',
-              message: 'i will send you some questions'
-            }
-          ]
-        },
-        {
-                id: 'fifthtId',
-                user_id: 'thirduser_Id',
-                state: {
-                  needsHuman: true,
-                  questions: [
-                    {
-                      ask: 'do_you_smoke'
-                    }
-                  ]
-                },
-                messages: [
-                  {
-                    user_id: 'patient',
-                    message: 'hello',
-                  },
-                  {
-                    user_id: 'nurse',
-                    message: 'i will send you some questions'
-                  }
-                ]
-              }
+        // {
+        //   id: 'first Id',
+        //   user_id: 'firstuser_Id',
+        //   state: {
+        //   },
+        //   messages: [
+        //     {
+        //       user_id: 'patient',
+        //       message: 'hello, how are you ^',
+        //       sender: 'user',
+        //       time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
+        //     },
+        //     {
+        //       user_id: 'nurse',
+        //       message: 'sending you some questions that are soooooo long that it just doenst make sense!!!',
+        //       sender: 'app',
+        //       time: '2017-01-01 15:05:25'
+        //     },
+        //     {
+        //       user_id: 'patienttwo',
+        //       message: 'i<ll look at that',
+        //       sender: 'user',
+        //       time: '2017-01-01 15:05:25'
+        //     },
+        //     {
+        //       user_id: 'patientthree',
+        //       message: 'hello, how are you ^',
+        //       sender: 'user',
+        //       time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
+        //     },
+        //     {
+        //       user_id: 'patientbutapp',
+        //       message: 'hello, how are you ^',
+        //       sender: 'app',
+        //       time: '2017-01-01 15:05:25' // use the moment library (npm) .fromNow()
+        //     },
+        //   ]
+        // },
+        // {
+        //   id: 'second Id',
+        //   user_id: 'seconduser_Id',
+        //   state: {
+        //     needsHuman: true,
+        //     questions: [
+        //       {
+        //         ask: 'do_you_smoke',
+        //         accept: ['affirmative'],
+        //         isAsking: false,
+        //         answer: 'a lot!!'
+        //       },
+        //       {
+        //         ask: 'do_you_have_allergies',
+        //         accept: ['affirmative'],
+        //         isAsking: false,
+        //         answer: "not that I know of"
+        //       },
+        //       {
+        //         ask: 'do_you_smoke_again',
+        //         accept: ['affirmative'],
+        //         isAsking: true
+        //       }
+        //     ]
+        //   },
+        //   messages: [
+        //     {
+        //       user_id: 'patient',
+        //       message: 'hello second conversation',
+        //     },
+        //     {
+        //       user_id: 'nurse',
+        //       message: 'i will send you some questions'
+        //     }
+        //   ]
+        // },
+        // {
+        //   id: 'thirdtId',
+        //   user_id: 'thirduser_Id',
+        //   state: {
+        //     needsHuman: true,
+        //     questions: [
+        //       {
+        //         ask: 'do_you_smoke'
+        //       }
+        //     ]
+        //   },
+        //   messages: [
+        //     {
+        //       user_id: 'patient',
+        //       message: 'hello',
+        //     },
+        //     {
+        //       user_id: 'nurse',
+        //       message: 'i will send you some questions'
+        //     }
+        //   ]
+        // },
+        // {
+        //   id: 'fourthtId',
+        //   user_id: 'thirduser_Id',
+        //   state: {
+        //     needsHuman: true,
+        //     questions: [
+        //       {
+        //         ask: 'do_you_smoke'
+        //       }
+        //     ]
+        //   },
+        //   messages: [
+        //     {
+        //       user_id: 'patient',
+        //       message: 'hello',
+        //     },
+        //     {
+        //       user_id: 'nurse',
+        //       message: 'i will send you some questions'
+        //     }
+        //   ]
+        // },
+        // {
+        //   id: 'fifthtId',
+        //   user_id: 'thirduser_Id',
+        //   state: {
+        //     needsHuman: true,
+        //     questions: [
+        //       {
+        //         ask: 'do_you_smoke'
+        //       }
+        //     ]
+        //   },
+        //   messages: [
+        //     {
+        //       user_id: 'patient',
+        //       message: 'hello',
+        //     },
+        //     {
+        //       user_id: 'nurse',
+        //       message: 'i will send you some questions'
+        //     }
+        //   ]
+        // }
       ]
-
     }
 
   componentDidMount(){
