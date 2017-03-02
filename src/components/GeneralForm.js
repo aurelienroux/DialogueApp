@@ -55,6 +55,17 @@ class GeneralForm extends Component {
     console.log("human res " + val)
   }
 
+  scrollToCurrentQuestion = () => {
+    let anchor = this.refs.anchor
+    if (anchor) {
+      anchor.scrollIntoView()
+    }
+  }
+
+  componentDidUpdate () {
+    this.scrollToCurrentQuestion();
+  }
+
   render(){
     const questions = this.props.conversation.state.questions;
     let questionsRender;
@@ -76,6 +87,7 @@ class GeneralForm extends Component {
         else if (question.isAsking === true && this.props.conversation.state.needsHuman === true ) {
           return (
             <div style={currentQuestion} key={question.ask}>
+              <div ref="anchor"/>
               <form onSubmit={this.sendHumanResponse}>
                 <TextField
                   floatingLabelText={question.askFriendly}
@@ -97,6 +109,7 @@ class GeneralForm extends Component {
         } else if (question.isAsking === true){
           return (
             <div style={currentQuestion} key={question.ask}>
+              <div ref="anchor"/>
               <form onSubmit={this.sendHumanResponse}>
                 <TextField
                   floatingLabelText={question.askFriendly}

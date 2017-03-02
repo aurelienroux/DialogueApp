@@ -64,10 +64,11 @@ class App extends Component {
         //     needsHuman: true,
         //     questions: [
         //       {
+        //         askFriendly:"Do you smoke ?",
         //         ask: 'do_you_smoke',
         //         accept: ['affirmative'],
         //         isAsking: false,
-        //         answer: 'a lot!!'
+        //         answer: '1 pack a day'
         //       },
         //       {
         //         ask: 'do_you_have_allergies',
@@ -88,7 +89,7 @@ class App extends Component {
         //       message: 'hello second conversation',
         //     },
         //     {
-        //       user_id: 'nurse',
+        //       user_id: 'app',
         //       message: 'i will send you some questions'
         //     }
         //   ]
@@ -97,10 +98,37 @@ class App extends Component {
         //   id: 'thirdtId',
         //   user_id: 'thirduser_Id',
         //   state: {
-        //     needsHuman: true,
+        //     needsHuman: false,
         //     questions: [
         //       {
-        //         ask: 'do_you_smoke'
+        //         askFriendly: 'Do you smoke?',
+        //         ask: 'do_you_smoke',
+        //         accept: ['affirmative', 'decline', 'do_you_smoke_answer'],
+        //         answer: '1 pack a day',
+        //         isAsking: false,
+        //       },
+        //       {
+        //         askFriendly: 'Do you take any medications?',
+        //         ask: 'any_medications',
+        //         accept: ['affirmative', 'decline','medication_answer'],
+        //         answer: '1 pack a day',
+        //         isAsking: false,
+        //       },
+        //       {
+        //         askFriendly: 'Do you have any allergies?',
+        //         ask: 'any_allergies',
+        //         accept: ['affirmative', 'decline', 'allergies_answer'],
+        //         isAsking: true,
+        //       },
+        //       {
+        //         askFriendly: 'Do you have insurance?',
+        //         ask: 'any_insurance',
+        //         accept: ['affirmative', 'decline','insurance_answer']
+        //       },
+        //       {
+        //         askFriendly: 'Do you live in Montreal?',
+        //         ask: 'in_what_city',
+        //         accept: ['affirmative', 'decline','city_answer']
         //       }
         //     ]
         //   },
